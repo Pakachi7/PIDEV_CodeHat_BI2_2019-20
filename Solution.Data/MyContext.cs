@@ -34,12 +34,17 @@ namespace Solution.Data
         public DbSet<Quiz> Quizs { get; set; }
         public DbSet<Reaction> Reactions { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<Company> Companies { get; set; }
+        public DbSet<Event> Events { get; set; }
+        public DbSet<Offer> Offers { get; set; }
 
         // public DbSet<Offre> Candidates { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new CandidateConfiguration());
-            
+            modelBuilder.Configurations.Add(new CompanyConfiguration());
+
+
             modelBuilder.Conventions.Add(new DateTimeConvention());
         }
     }

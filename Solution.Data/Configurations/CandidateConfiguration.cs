@@ -37,7 +37,7 @@ namespace Solution.Data.Configurations
     });
 
         
-HasMany(prod => prod.Offres).WithMany(cat => cat.Candidates).Map(M =>
+HasMany(prod => prod.Offers).WithMany(cat => cat.Candidates).Map(M =>
             {
     M.ToTable("OffresOfCandidate");
     M.MapRightKey("Candidate");//le nom de la clé dans la tab de relation est Product

@@ -22,7 +22,7 @@ namespace Solution.Domain.Entities
         public virtual ICollection<Diploma> Diplomas { get; set; }
         public virtual ICollection<Certification> Certifications { get; set; }
         public virtual ICollection<Experience> Experiences { get; set; }
-        public virtual ICollection<Offre> Offres { get; set; }
+        public virtual ICollection<Offer> Offers { get; set; }
         public virtual ICollection<Company> Companies { get; set; }
 
 
