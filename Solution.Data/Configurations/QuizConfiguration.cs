@@ -17,6 +17,5 @@ namespace Solution.Data.Configurations
                           HasForeignKey(question => question.QuizId).//prop nav
                           WillCascadeOnDelete(false);
         }
-       
     }
 }

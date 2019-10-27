@@ -64,13 +64,9 @@
     <Compile Include="Infrastructures\IUnitOfWork.cs" />
     <Compile Include="Infrastructures\RepositoryBase.cs" />
     <Compile Include="Infrastructures\UnitOfWork.cs" />
-    <Compile Include="Migrations\201910271426355_karim_migration.cs" />
-    <Compile Include="Migrations\201910271426355_karim_migration.designer.cs">
-      <DependentUpon>201910271426355_karim_migration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201910271536547_karim_entity_update.cs" />
-    <Compile Include="Migrations\201910271536547_karim_entity_update.designer.cs">
-      <DependentUpon>201910271536547_karim_entity_update.cs</DependentUpon>
+    <Compile Include="Migrations\201910271620303_karim_migration.cs" />
+    <Compile Include="Migrations\201910271620303_karim_migration.designer.cs">
+      <DependentUpon>201910271620303_karim_migration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyContext.cs" />
@@ -87,11 +83,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201910271426355_karim_migration.resx">
-      <DependentUpon>201910271426355_karim_migration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201910271536547_karim_entity_update.resx">
-      <DependentUpon>201910271536547_karim_entity_update.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201910271620303_karim_migration.resx">
+      <DependentUpon>201910271620303_karim_migration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

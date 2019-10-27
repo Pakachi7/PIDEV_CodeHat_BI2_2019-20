@@ -19,9 +19,8 @@ namespace Solution.Domain.Entities
         public int Question_Correct_Answer { get; set; }
 
         public int QuizId { get; set; }
-
         [ForeignKey("QuizId")]
-
         public virtual Quiz Quiz { get; set; }
+
     }
 }
