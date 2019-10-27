@@ -55,6 +55,7 @@
     <Compile Include="Configurations\CandidateConfiguration.cs" />
     <Compile Include="Configurations\CompanyConfiguration.cs" />
     <Compile Include="Configurations\PostConfiguration.cs" />
+    <Compile Include="Configurations\QuizConfiguration.cs" />
     <Compile Include="CustomConventions\DateTimeConvention.cs" />
     <Compile Include="Infrastructures\DataBaseFactory.cs" />
     <Compile Include="Infrastructures\Disposable.cs" />
@@ -63,13 +64,13 @@
     <Compile Include="Infrastructures\IUnitOfWork.cs" />
     <Compile Include="Infrastructures\RepositoryBase.cs" />
     <Compile Include="Infrastructures\UnitOfWork.cs" />
-    <Compile Include="Migrations\201910262234556_FirstMigration.cs" />
-    <Compile Include="Migrations\201910262234556_FirstMigration.designer.cs">
-      <DependentUpon>201910262234556_FirstMigration.cs</DependentUpon>
+    <Compile Include="Migrations\201910271426355_karim_migration.cs" />
+    <Compile Include="Migrations\201910271426355_karim_migration.designer.cs">
+      <DependentUpon>201910271426355_karim_migration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201910262306116_Migration2MayssaEvent_Company_Offre_CompanyConfig.cs" />
-    <Compile Include="Migrations\201910262306116_Migration2MayssaEvent_Company_Offre_CompanyConfig.designer.cs">
-      <DependentUpon>201910262306116_Migration2MayssaEvent_Company_Offre_CompanyConfig.cs</DependentUpon>
+    <Compile Include="Migrations\201910271536547_karim_entity_update.cs" />
+    <Compile Include="Migrations\201910271536547_karim_entity_update.designer.cs">
+      <DependentUpon>201910271536547_karim_entity_update.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyContext.cs" />
@@ -86,15 +87,12 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201910262234556_FirstMigration.resx">
-      <DependentUpon>201910262234556_FirstMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201910271426355_karim_migration.resx">
+      <DependentUpon>201910271426355_karim_migration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201910262306116_Migration2MayssaEvent_Company_Offre_CompanyConfig.resx">
-      <DependentUpon>201910262306116_Migration2MayssaEvent_Company_Offre_CompanyConfig.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201910271536547_karim_entity_update.resx">
+      <DependentUpon>201910271536547_karim_entity_update.cs</DependentUpon>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Migrations\201910262304545_Migration2MayssaEvent\Company\Offre\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

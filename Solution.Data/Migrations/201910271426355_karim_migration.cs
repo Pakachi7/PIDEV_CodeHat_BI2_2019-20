@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class FirstMigration : DbMigration
+    public partial class karim_migration : DbMigration
     {
         public override void Up()
         {
@@ -45,13 +45,10 @@
                         role = c.Int(nullable: false),
                         CandidateId = c.Int(),
                         Discriminator = c.String(nullable: false, maxLength: 128),
-                        Company_CompanyId = c.Int(),
                         Payment_PaymentId = c.Int(),
                     })
                 .PrimaryKey(t => t.UserId)
-                .ForeignKey("dbo.Companies", t => t.Company_CompanyId)
                 .ForeignKey("dbo.Payments", t => t.Payment_PaymentId)
-                .Index(t => t.Company_CompanyId)
                 .Index(t => t.Payment_PaymentId);
             
             CreateTable(
@@ -80,39 +77,41 @@
                 .PrimaryKey(t => t.CompanyId);
             
             CreateTable(
-                "dbo.Comments",
+                "dbo.Events",
                 c => new
                     {
-                        CommentId = c.Int(nullable: false, identity: true),
-                        UserId = c.Int(nullable: false),
-                        Content = c.String(),
-                        CommentDate = c.DateTime(nullable: false, precision: 7, storeType: "datetime2"),
-                        NbrLikes = c.Int(nullable: false),
-                        PostId = c.Int(),
-                        Company_CompanyId = c.Int(),
+                        EventId = c.Int(nullable: false, identity: true),
+                        Event_Title = c.String(),
+                        Event_Description = c.String(),
+                        Event_Organizer = c.String(),
+                        Event_Date = c.DateTime(nullable: false, precision: 7, storeType: "datetime2"),
+                        NumberOfParticipent = c.Int(nullable: false),
+                        CompanyId = c.Int(),
                     })
-                .PrimaryKey(t => t.CommentId)
-                .ForeignKey("dbo.Posts", t => t.PostId)
-                .ForeignKey("dbo.Companies", t => t.Company_CompanyId)
-                .Index(t => t.PostId)
-                .Index(t => t.Company_CompanyId);
+                .PrimaryKey(t => t.EventId)
+                .ForeignKey("dbo.Companies", t => t.CompanyId)
+                .Index(t => t.CompanyId);
             
             CreateTable(
-                "dbo.Posts",
+                "dbo.Offers",
                 c => new
                     {
-                        PostId = c.Int(nullable: false, identity: true),
-                        UserId = c.Int(nullable: false),
-                        Content = c.String(),
-                        UrlImage = c.String(),
-                        UrlVideo = c.String(),
-                        PostDate = c.DateTime(nullable: false, precision: 7, storeType: "datetime2"),
-                        NbrLikes = c.Int(nullable: false),
-                        Company_CompanyId = c.Int(),
+                        OfferId = c.Int(nullable: false, identity: true),
+                        Offer_Title = c.String(),
+                        Offer_description = c.String(),
+                        Offre_Location = c.String(),
+                        Offre_Duration = c.String(),
+                        Offre_Salary = c.Single(nullable: false),
+                        Offer_Contract_Type = c.String(),
+                        Offer_Level_Of_Expertise = c.String(),
+                        Offer_DatePublished = c.DateTime(nullable: false, precision: 7, storeType: "datetime2"),
+                        Validity = c.Boolean(nullable: false),
+                        Vues = c.Int(nullable: false),
+                        CompanyId = c.Int(),
                     })
-                .PrimaryKey(t => t.PostId)
-                .ForeignKey("dbo.Companies", t => t.Company_CompanyId)
-                .Index(t => t.Company_CompanyId);
+                .PrimaryKey(t => t.OfferId)
+                .ForeignKey("dbo.Companies", t => t.CompanyId)
+                .Index(t => t.CompanyId);
             
             CreateTable(
                 "dbo.Diplomata",
@@ -146,18 +145,6 @@
                         Level = c.String(),
                     })
                 .PrimaryKey(t => t.LanguageId);
-            
-            CreateTable(
-                "dbo.Offres",
-                c => new
-                    {
-                        OffreId = c.Int(nullable: false, identity: true),
-                        DatePublished = c.DateTime(nullable: false, precision: 7, storeType: "datetime2"),
-                        ExpiredDate = c.DateTime(nullable: false, precision: 7, storeType: "datetime2"),
-                        description = c.String(),
-                        Validity = c.Boolean(nullable: false),
-                    })
-                .PrimaryKey(t => t.OffreId);
             
             CreateTable(
                 "dbo.Claims",
@@ -223,6 +210,35 @@
                 .PrimaryKey(t => t.PaymentId)
                 .ForeignKey("dbo.Users", t => t.UserId_UserId)
                 .Index(t => t.UserId_UserId);
+            
+            CreateTable(
+                "dbo.Posts",
+                c => new
+                    {
+                        PostId = c.Int(nullable: false, identity: true),
+                        UserId = c.Int(nullable: false),
+                        Content = c.String(),
+                        UrlImage = c.String(),
+                        UrlVideo = c.String(),
+                        PostDate = c.DateTime(nullable: false, precision: 7, storeType: "datetime2"),
+                        NbrLikes = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.PostId);
+            
+            CreateTable(
+                "dbo.Comments",
+                c => new
+                    {
+                        CommentId = c.Int(nullable: false, identity: true),
+                        UserId = c.Int(nullable: false),
+                        Content = c.String(),
+                        CommentDate = c.DateTime(nullable: false, precision: 7, storeType: "datetime2"),
+                        NbrLikes = c.Int(nullable: false),
+                        PostId = c.Int(),
+                    })
+                .PrimaryKey(t => t.CommentId)
+                .ForeignKey("dbo.Posts", t => t.PostId)
+                .Index(t => t.PostId);
             
             CreateTable(
                 "dbo.Questions",
@@ -338,7 +354,7 @@
                     })
                 .PrimaryKey(t => new { t.Offres, t.Candidate })
                 .ForeignKey("dbo.Users", t => t.Offres, cascadeDelete: true)
-                .ForeignKey("dbo.Offres", t => t.Candidate, cascadeDelete: true)
+                .ForeignKey("dbo.Offers", t => t.Candidate, cascadeDelete: true)
                 .Index(t => t.Offres)
                 .Index(t => t.Candidate);
             
@@ -347,10 +363,11 @@
         public override void Down()
         {
             DropForeignKey("dbo.Questions", "Quiz_QuizId", "dbo.Quizs");
+            DropForeignKey("dbo.Comments", "PostId", "dbo.Posts");
             DropForeignKey("dbo.Payments", "UserId_UserId", "dbo.Users");
             DropForeignKey("dbo.Users", "Payment_PaymentId", "dbo.Payments");
             DropForeignKey("dbo.Claims", "UserId_UserId", "dbo.Users");
-            DropForeignKey("dbo.OffresOfCandidate", "Candidate", "dbo.Offres");
+            DropForeignKey("dbo.OffresOfCandidate", "Candidate", "dbo.Offers");
             DropForeignKey("dbo.OffresOfCandidate", "Offres", "dbo.Users");
             DropForeignKey("dbo.Knowledge", "Candidate", "dbo.Languages");
             DropForeignKey("dbo.Knowledge", "Language", "dbo.Users");
@@ -360,10 +377,8 @@
             DropForeignKey("dbo.DiplomaOfCandidate", "Diploma", "dbo.Users");
             DropForeignKey("dbo.Subscribers", "Candidate", "dbo.Companies");
             DropForeignKey("dbo.Subscribers", "Company", "dbo.Users");
-            DropForeignKey("dbo.Users", "Company_CompanyId", "dbo.Companies");
-            DropForeignKey("dbo.Posts", "Company_CompanyId", "dbo.Companies");
-            DropForeignKey("dbo.Comments", "Company_CompanyId", "dbo.Companies");
-            DropForeignKey("dbo.Comments", "PostId", "dbo.Posts");
+            DropForeignKey("dbo.Offers", "CompanyId", "dbo.Companies");
+            DropForeignKey("dbo.Events", "CompanyId", "dbo.Companies");
             DropForeignKey("dbo.CertificationOfCandidate", "Candidate", "dbo.Certifications");
             DropForeignKey("dbo.CertificationOfCandidate", "Certification", "dbo.Users");
             DropIndex("dbo.OffresOfCandidate", new[] { "Candidate" });
@@ -379,13 +394,12 @@
             DropIndex("dbo.CertificationOfCandidate", new[] { "Candidate" });
             DropIndex("dbo.CertificationOfCandidate", new[] { "Certification" });
             DropIndex("dbo.Questions", new[] { "Quiz_QuizId" });
+            DropIndex("dbo.Comments", new[] { "PostId" });
             DropIndex("dbo.Payments", new[] { "UserId_UserId" });
             DropIndex("dbo.Claims", new[] { "UserId_UserId" });
-            DropIndex("dbo.Posts", new[] { "Company_CompanyId" });
-            DropIndex("dbo.Comments", new[] { "Company_CompanyId" });
-            DropIndex("dbo.Comments", new[] { "PostId" });
+            DropIndex("dbo.Offers", new[] { "CompanyId" });
+            DropIndex("dbo.Events", new[] { "CompanyId" });
             DropIndex("dbo.Users", new[] { "Payment_PaymentId" });
-            DropIndex("dbo.Users", new[] { "Company_CompanyId" });
             DropTable("dbo.OffresOfCandidate");
             DropTable("dbo.Knowledge");
             DropTable("dbo.ExperienceOfCandidate");
@@ -395,17 +409,18 @@
             DropTable("dbo.Reactions");
             DropTable("dbo.Quizs");
             DropTable("dbo.Questions");
+            DropTable("dbo.Comments");
+            DropTable("dbo.Posts");
             DropTable("dbo.Payments");
             DropTable("dbo.Notifications");
             DropTable("dbo.Messages");
             DropTable("dbo.Interviews");
             DropTable("dbo.Claims");
-            DropTable("dbo.Offres");
             DropTable("dbo.Languages");
             DropTable("dbo.Experiences");
             DropTable("dbo.Diplomata");
-            DropTable("dbo.Posts");
-            DropTable("dbo.Comments");
+            DropTable("dbo.Offers");
+            DropTable("dbo.Events");
             DropTable("dbo.Companies");
             DropTable("dbo.Certifications");
             DropTable("dbo.Users");
