@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Configurations\CandidateConfiguration.cs" />
+    <Compile Include="Configurations\CommentConfiguration.cs" />
     <Compile Include="Configurations\CompanyConfiguration.cs" />
     <Compile Include="Configurations\PostConfiguration.cs" />
     <Compile Include="Configurations\QuizConfiguration.cs" />
@@ -64,9 +65,17 @@
     <Compile Include="Infrastructures\IUnitOfWork.cs" />
     <Compile Include="Infrastructures\RepositoryBase.cs" />
     <Compile Include="Infrastructures\UnitOfWork.cs" />
-    <Compile Include="Migrations\201910271620303_karim_migration.cs" />
-    <Compile Include="Migrations\201910271620303_karim_migration.designer.cs">
-      <DependentUpon>201910271620303_karim_migration.cs</DependentUpon>
+    <Compile Include="Migrations\201910290903459_firstmigration.cs" />
+    <Compile Include="Migrations\201910290903459_firstmigration.designer.cs">
+      <DependentUpon>201910290903459_firstmigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910290907337_secondmigration.cs" />
+    <Compile Include="Migrations\201910290907337_secondmigration.designer.cs">
+      <DependentUpon>201910290907337_secondmigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910290923246_thirdmigration.cs" />
+    <Compile Include="Migrations\201910290923246_thirdmigration.designer.cs">
+      <DependentUpon>201910290923246_thirdmigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyContext.cs" />
@@ -83,8 +92,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201910271620303_karim_migration.resx">
-      <DependentUpon>201910271620303_karim_migration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201910290903459_firstmigration.resx">
+      <DependentUpon>201910290903459_firstmigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910290907337_secondmigration.resx">
+      <DependentUpon>201910290907337_secondmigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910290923246_thirdmigration.resx">
+      <DependentUpon>201910290923246_thirdmigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
