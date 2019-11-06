@@ -12,6 +12,6 @@ namespace Solution.Domain.Entities
         public User UserId { get; set; }
         public double Amount_payment { get; set; }
         public DateTime Payment_date { get; set; }
-        public virtual ICollection<Candidate> Candidates { get; set; }
+        
     }
 }

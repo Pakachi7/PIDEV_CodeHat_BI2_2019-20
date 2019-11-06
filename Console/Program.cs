@@ -11,6 +11,7 @@ namespace Console
     {
         static void Main(string[] args)
         {
+
            MyContext ctx = new MyContext();
         }
     }

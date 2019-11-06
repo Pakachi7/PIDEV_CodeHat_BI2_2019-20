@@ -1,0 +1,62 @@
+﻿@model Solution.Domain.Entities.Candidate
+
+@{
+    ViewBag.Title = "Details";
+}
+@RenderPage("../Shared/Header.cshtml")
+<div class="col-md-4">
+
+    <!-- Professional Details -->
+    <div class="sidebar">
+        <h5 class="main-title">Professional Details</h5>
+        <div class="sidebar-information">
+            <ul class="single-category">
+                <li class="row">
+                    <h6 class="title col-xs-6"> @Html.DisplayNameFor(model => model.FirstName)</h6>
+                    <span class="subtitle col-xs-6">@Html.DisplayFor(model => model.FirstName)</span>
+                </li>
+                <li class="row">
+                    <h6 class="title col-xs-6">
+                        @Html.DisplayNameFor(model => model.LastName)</h6>
+                    <span class="subtitle col-xs-6">@Html.DisplayFor(model => model.LastName)</span>
+</li>
+                <li class="row">
+                    <h6 class="title col-xs-6">
+                        @Html.DisplayNameFor(model => model.DateOfBirthday)
+                    </h6>
+                    <span class="subtitle col-xs-6">@Html.DisplayFor(model => model.DateOfBirthday)</span>
+                </li>
+                <li class="row">
+                    <h6 class="title col-xs-6"> @Html.DisplayNameFor(model => model.Email)</h6>
+                    <span class="subtitle col-xs-6"> @Html.DisplayFor(model => model.Email)s</span>
+                </li>
+                <li class="row">
+                    <h6 class="title col-xs-6"> @Html.DisplayNameFor(model => model.PhoneNumber)</h6>
+                    <span class="subtitle col-xs-6"> @Html.DisplayFor(model => model.PhoneNumber)</span>
+                </li>
+                <li class="row">
+                    <h6 class="title col-xs-6">@Html.DisplayNameFor(model => model.Address)</h6>
+                    <span class="subtitle col-xs-6">@Html.DisplayFor(model => model.Address)</span>
+                </li>
+                <li class="row">
+                    <h6 class="title col-xs-6"> @Html.DisplayNameFor(model => model.ImageUrl)</h6>
+                    <span class="subtitle col-xs-6"> @Html.DisplayFor(model => model.ImageUrl)</span>
+                </li>
+                <li class="row">
+                    <h6 class="title col-xs-6">@Html.DisplayNameFor(model => model.bio)</h6>
+                    <span class="subtitle col-xs-6">@Html.DisplayFor(model => model.bio)</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <h2>Gerer votre Espace</h2>
+
+    <h4>Candidate</h4>
+    <hr />
+    
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CandidateId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
