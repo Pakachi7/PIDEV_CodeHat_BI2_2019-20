@@ -1,0 +1,96 @@
+﻿@model IEnumerable<Solution.Presentation.Models.CompanyVM>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@using (Html.BeginForm())
+{
+    <table>
+        <tr>
+            <td>
+                <div>
+                    Search by Company: @Html.TextBox("searchString")
+                </div>
+            </td>
+            <td>
+                <input type="submit" value="Search" id="submit" />
+            </td>
+        </tr>
+    </table>
+}
+
+<p>
+    @Html.ActionLink("Add new Company", "Create")
+</p>
+<table class="table">
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Company_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Company_Number)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Company_Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Company_Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Company_Website)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Company_Logo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Company_Address)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.NumberOfEmployees)
+        </th>*@
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    @*<td>
+            @Html.DisplayFor(modelItem => item.CompanyId)
+        </td>*@
+    <td>
+        @Html.DisplayFor(modelItem => item.Company_Name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Company_Number)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Company_Email)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Company_Description)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Company_Website)
+    </td>
+    <td>
+        @{string path = "~/Content/Uploads/" + item.Company_Logo;}
+        <img src="@Url.Content(path)" width="50" height="50" />
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Company_Address)
+    </td>
+    @*<td>
+            @Html.DisplayFor(modelItem => item.NumberOfEmployees)
+        </td>*@
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.CompanyId }) |
+        @Html.ActionLink("Details", "Details", new { id = item.CompanyId }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.CompanyId })
+    </td>
+</tr>
+    }
+
+</table>

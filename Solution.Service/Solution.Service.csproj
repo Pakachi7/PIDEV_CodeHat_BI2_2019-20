@@ -43,7 +43,14 @@
   <ItemGroup>
     <Compile Include="CandidateService.cs" />
     <Compile Include="Class1.cs" />
+<<<<<<< HEAD
     <Compile Include="ICandidatService.cs" />
+=======
+    <Compile Include="CompanyService.cs" />
+    <Compile Include="ICompanyService.cs" />
+    <Compile Include="IOfferService.cs" />
+    <Compile Include="OfferService.cs" />
+>>>>>>> 0f16c014bcd95e092c6a575b909e5046bd2a1c13
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
