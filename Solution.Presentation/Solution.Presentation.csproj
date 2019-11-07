@@ -181,31 +181,21 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-<<<<<<< HEAD
     <Compile Include="Controllers\CandidateController.cs" />
-=======
-    <Compile Include="Controllers\CompanyController.cs" />
->>>>>>> 0f16c014bcd95e092c6a575b909e5046bd2a1c13
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\OfferController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
-<<<<<<< HEAD
     <Compile Include="Models\AddressVM.cs" />
     <Compile Include="Models\Candidat.cs" />
     <Compile Include="Models\CandidateVM.cs" />
     <Compile Include="Models\CertificateVM.cs" />
     <Compile Include="Models\DiplomaVM.cs" />
-=======
-    <Compile Include="Models\CompanyVM.cs" />
->>>>>>> 0f16c014bcd95e092c6a575b909e5046bd2a1c13
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\LangageVM.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\OfferVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -3036,7 +3026,6 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-<<<<<<< HEAD
     <Content Include="Scripts\plugins\.DS_Store" />
     <Content Include="Scripts\plugins\mejs\silverlightmediaelement.xap" />
     <Content Include="Scripts\scripts.min.js.map" />
@@ -3051,24 +3040,9 @@
     <Content Include="Views\Shared\Footer.cshtml" />
     <Content Include="Views\Shared\Header.cshtml" />
     <Content Include="Views\Shared\ViewPage1.cshtml" />
-=======
-    <Content Include="Views\Company\Create.cshtml" />
-    <Content Include="Views\Company\IndexVM.cshtml" />
-    <Content Include="Views\Company\Delete.cshtml" />
-    <Content Include="Views\Company\Edit.cshtml" />
-    <Content Include="Views\Company\Details.cshtml" />
-    <Content Include="Views\Offer\Index.cshtml" />
-    <Content Include="Views\Offer\Create.cshtml" />
-    <Content Include="Views\Company\_CompanyDetails.cshtml" />
-    <Content Include="Views\Company\Index.cshtml" />
-    <Content Include="Views\Offer\Delete.cshtml" />
-    <Content Include="Views\Offer\Details.cshtml" />
-    <Content Include="Views\Offer\Edit.cshtml" />
->>>>>>> 0f16c014bcd95e092c6a575b909e5046bd2a1c13
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\Uploads\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

@@ -11,7 +11,6 @@ namespace Solution.Domain.Entities
         {
             public string City { get; set; }
             public string StreetAddress { get; set; }
-            public string ZipCode { get; set; }
 
        
     }

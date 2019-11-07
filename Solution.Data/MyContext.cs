@@ -30,7 +30,6 @@ namespace Solution.Data
         public DbSet<Notification> notifications { get; set; }
         public DbSet<Payment> Payments { get; set; }
         public DbSet<Post> Posts { get; set; }
-        public DbSet<Comment> Comments { get; set; }
         public DbSet<Question> Questions { get; set; }
         public DbSet<Quiz> Quizs { get; set; }
         public DbSet<Reaction> Reactions { get; set; }
@@ -44,7 +43,6 @@ namespace Solution.Data
         {
             modelBuilder.Configurations.Add(new CandidateConfiguration());
             modelBuilder.Configurations.Add(new CompanyConfiguration());
-            modelBuilder.Configurations.Add(new CommentConfiguration());
 
 
             modelBuilder.Conventions.Add(new DateTimeConvention());
