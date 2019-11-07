@@ -71,6 +71,38 @@
     <Compile Include="Migrations\201910262306116_Migration2MayssaEvent_Company_Offre_CompanyConfig.designer.cs">
       <DependentUpon>201910262306116_Migration2MayssaEvent_Company_Offre_CompanyConfig.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910281731491_ConnectionString_Presentation.cs" />
+    <Compile Include="Migrations\201910281731491_ConnectionString_Presentation.designer.cs">
+      <DependentUpon>201910281731491_ConnectionString_Presentation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910290834577_Modif_Offer.cs" />
+    <Compile Include="Migrations\201910290834577_Modif_Offer.designer.cs">
+      <DependentUpon>201910290834577_Modif_Offer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910300900061_migrationModificationOffre.cs" />
+    <Compile Include="Migrations\201910300900061_migrationModificationOffre.designer.cs">
+      <DependentUpon>201910300900061_migrationModificationOffre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910301040570_migrationModificationOffre1.cs" />
+    <Compile Include="Migrations\201910301040570_migrationModificationOffre1.designer.cs">
+      <DependentUpon>201910301040570_migrationModificationOffre1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911021310074_migrationModificationCompany1.cs" />
+    <Compile Include="Migrations\201911021310074_migrationModificationCompany1.designer.cs">
+      <DependentUpon>201911021310074_migrationModificationCompany1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911021324559_migrationModificationCompany2.cs" />
+    <Compile Include="Migrations\201911021324559_migrationModificationCompany2.designer.cs">
+      <DependentUpon>201911021324559_migrationModificationCompany2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911021352368_migrationModificationCompany3.cs" />
+    <Compile Include="Migrations\201911021352368_migrationModificationCompany3.designer.cs">
+      <DependentUpon>201911021352368_migrationModificationCompany3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911022021533_migrationModificationOffer2.cs" />
+    <Compile Include="Migrations\201911022021533_migrationModificationOffer2.designer.cs">
+      <DependentUpon>201911022021533_migrationModificationOffer2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -92,10 +124,32 @@
     <EmbeddedResource Include="Migrations\201910262306116_Migration2MayssaEvent_Company_Offre_CompanyConfig.resx">
       <DependentUpon>201910262306116_Migration2MayssaEvent_Company_Offre_CompanyConfig.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910281731491_ConnectionString_Presentation.resx">
+      <DependentUpon>201910281731491_ConnectionString_Presentation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910290834577_Modif_Offer.resx">
+      <DependentUpon>201910290834577_Modif_Offer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910300900061_migrationModificationOffre.resx">
+      <DependentUpon>201910300900061_migrationModificationOffre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910301040570_migrationModificationOffre1.resx">
+      <DependentUpon>201910301040570_migrationModificationOffre1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911021310074_migrationModificationCompany1.resx">
+      <DependentUpon>201911021310074_migrationModificationCompany1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911021324559_migrationModificationCompany2.resx">
+      <DependentUpon>201911021324559_migrationModificationCompany2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911021352368_migrationModificationCompany3.resx">
+      <DependentUpon>201911021352368_migrationModificationCompany3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911022021533_migrationModificationOffer2.resx">
+      <DependentUpon>201911022021533_migrationModificationOffer2.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Migrations\201910262304545_Migration2MayssaEvent\Company\Offre\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

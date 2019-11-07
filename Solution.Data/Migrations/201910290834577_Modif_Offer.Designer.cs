@@ -7,13 +7,13 @@ namespace Solution.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.3.0")]
-    public sealed partial class Migration2MayssaEventCompanyOffreCompanyConfig : IMigrationMetadata
+    public sealed partial class Modif_Offer : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Migration2MayssaEventCompanyOffreCompanyConfig));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Modif_Offer));
         
         string IMigrationMetadata.Id
         {
-            get { return "201910262304545_Migration2MayssaEvent/Company/Offre/CompanyConfig"; }
+            get { return "201910290834577_Modif_Offer"; }
         }
         
         string IMigrationMetadata.Source
