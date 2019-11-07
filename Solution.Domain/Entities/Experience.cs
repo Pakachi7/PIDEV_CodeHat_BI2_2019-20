@@ -11,7 +11,8 @@ namespace Solution.Domain.Entities
         public int ExperienceId { get; set; }
         public int Nbr { get; set; }
         public string field { get; set; }
-        public virtual ICollection<Candidate> Candidates { get; set; }
+        public int CandidateId { get; set; }
+        public virtual Candidate Candidate { get; set; }
 
 
     }

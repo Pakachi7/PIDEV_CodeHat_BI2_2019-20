@@ -20,16 +20,13 @@ namespace Solution.Data.Configurations
                 M.MapLeftKey("Language");
             });
 
-        
-        HasMany(prod => prod.Experiences).WithMany(cat => cat.Candidates).Map(M =>
-            {
-            M.ToTable("ExperienceOfCandidate");
-            M.MapRightKey("Candidate");//le nom de la clé dans la tab de relation est Product
-            M.MapLeftKey("Experience");
-        });
 
-        
-    HasMany(prod => prod.Diplomas).WithMany(cat => cat.Candidates).Map(M =>
+            HasMany<Experience>(c => c.Experiences)
+                    .WithRequired(e=>e.Candidate)
+                    .HasForeignKey(e => e.CandidateId);
+
+
+            HasMany(prod => prod.Diplomas).WithMany(cat => cat.Candidates).Map(M =>
             {
         M.ToTable("DiplomaOfCandidate");
         M.MapRightKey("Candidate");//le nom de la clé dans la tab de relation est Product

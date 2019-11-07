@@ -74,6 +74,7 @@
     <Compile Include="Entities\Quiz.cs" />
     <Compile Include="Entities\Quiz_Result.cs" />
     <Compile Include="Entities\Reaction.cs" />
+    <Compile Include="Entities\Skill.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
