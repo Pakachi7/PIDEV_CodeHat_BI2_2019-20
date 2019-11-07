@@ -10,7 +10,8 @@ namespace Solution.Domain.Entities
     {
         public int AvailabilityId { get; set; }
         public int Representator_Id { get; set; }
-        public DateTime Availability_Date { get; set; }
-        public String Quiz_Result_Status { get; set; }
+        public DateTime Availability_Date_Begin { get; set; }
+        public DateTime Availability_Date_End { get; set; }
+
     }
 }
