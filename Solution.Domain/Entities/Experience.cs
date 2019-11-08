@@ -9,8 +9,12 @@ namespace Solution.Domain.Entities
     public class Experience
     {
         public int ExperienceId { get; set; }
-        public int Nbr { get; set; }
-        public string field { get; set; }
+        public string Designation { get; set; }
+        public string Description { get; set; }
+
+        public DateTime StartDate { get; set;}
+
+        public DateTime EndDate { get; set; }
         public int CandidateId { get; set; }
         public virtual Candidate Candidate { get; set; }
 

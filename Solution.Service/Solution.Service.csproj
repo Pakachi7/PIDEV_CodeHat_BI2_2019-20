@@ -43,7 +43,9 @@
   <ItemGroup>
     <Compile Include="CandidateService.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="ExperienceService.cs" />
     <Compile Include="ICandidatService.cs" />
+    <Compile Include="IExperienceService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

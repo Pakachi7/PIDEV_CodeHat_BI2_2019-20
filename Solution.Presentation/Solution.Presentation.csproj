@@ -193,6 +193,7 @@
     <Compile Include="Models\CandidateVM.cs" />
     <Compile Include="Models\CertificateVM.cs" />
     <Compile Include="Models\DiplomaVM.cs" />
+    <Compile Include="Models\ExperienceVM.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\LangageVM.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -3041,6 +3042,7 @@
     <Content Include="Views\Shared\Header.cshtml" />
     <Content Include="Views\Shared\ViewPage1.cshtml" />
     <Content Include="Views\Shared\_Layout1.cshtml" />
+    <Content Include="Views\Candidate\AddExperience.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

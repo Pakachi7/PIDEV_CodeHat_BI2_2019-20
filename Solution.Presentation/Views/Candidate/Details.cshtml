@@ -136,70 +136,31 @@
                                             </ul>
                                         </div>
                                     </div>
-
-                                    <!-- Similar Professional -->
+                                    <!-- Experiences -->
                                     <div class="sidebar">
-                                        <h5 class="main-title">Similar Professionals</h5>
-
-                                        <!-- Similar -->
-                                        <div class="similar">
-                                            <div class="media">
-                                                <div class="media-left">
-                                                    <div class="inn-simi"> <img class="media-object" src="~/Content/images/med-avatar.jpg" alt=""> <a href="#">Profile </a> </div>
+                                        <h5 class="main-title">Experiences</h5>
+                                        <div class="row">
+                                            @foreach (var item in Model.Experiences)
+                                            {
+                                                <div class="col-md-4">
+                                                    <div class="uou-block-service-new">
+                                                        
+                                                        @Html.ActionLink("delete", "DeleteExperience", new { id = Model.CandidateId, item.ExperienceId })
+                                                        <h6><i class="fa fa-paper-plane-o"></i>@item.Designation</h6>
+                                                        <p>@item.Description
+                                                        <p>
+                                                            @item.StartDate.Year -
+                                                            @item.EndDate.Year
+                                                        </p>
+                                                        </p>
+                                                    </div>
                                                 </div>
-                                                <div class="media-body">
-                                                    <h5>Media heading</h5>
-                                                    <p>SEO Specialist - New York, USA</p>
-                                                    <p>
-                                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, maxime, excepturi, mollitia,
-                                                        voluptatibus similique aliquid a dolores autem laudantium sapiente ad enim ipsa modi laborum
-                                                        accusantium deleniti neque architecto vitae.
-                                                    </p>
-
-                                                    <!-- Share -->
-                                                    <div class="share-w"><a href="#."><i class="fa fa-bookmark-o"></i></a> <a href="#."><i class="fa fa-envelope-o"></i></a> <a href="#."><i class="fa fa-eye"></i></a></div>
-                                                </div>
-                                            </div>
-
-                                            <!-- Similar -->
-                                            <div class="media">
-                                                <div class="media-left">
-                                                    <div class="inn-simi"> <img class="media-object" src="~/Content/images/med-avatar.jpg" alt=""> <a href="#">Profile </a> </div>
-                                                </div>
-                                                <div class="media-body">
-                                                    <h5>Denise Walsh</h5>
-                                                    <p>SEO Specialist - New York, USA</p>
-                                                    <p>
-                                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, maxime, excepturi, mollitia,
-                                                        voluptatibus similique aliquid a dolores autem laudantium sapiente ad enim ipsa modi laborum
-                                                        accusantium deleniti neque architecto vitae.
-                                                    </p>
-
-                                                    <!-- Share -->
-                                                    <div class="share-w"><a href="#."><i class="fa fa-bookmark-o"></i></a> <a href="#."><i class="fa fa-envelope-o"></i></a> <a href="#."><i class="fa fa-eye"></i></a></div>
-                                                </div>
-                                            </div>
-
-                                            <!-- Similar -->
-                                            <div class="media">
-                                                <div class="media-left">
-                                                    <div class="inn-simi"> <img class="media-object" src="~/Content/images/med-avatar.jpg" alt=""> <a href="#">Profile </a> </div>
-                                                </div>
-                                                <div class="media-body">
-                                                    <h5>Denise Walsh</h5>
-                                                    <p>SEO Specialist - New York, USA</p>
-                                                    <p>
-                                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, maxime, excepturi, mollitia,
-                                                        voluptatibus similique aliquid a dolores autem laudantium sapiente ad enim ipsa modi laborum
-                                                        accusantium deleniti neque architecto vitae.
-                                                    </p>
-
-                                                    <!-- Share -->
-                                                    <div class="share-w"><a href="#."><i class="fa fa-bookmark-o"></i></a> <a href="#."><i class="fa fa-envelope-o"></i></a> <a href="#."><i class="fa fa-eye"></i></a></div>
-                                                </div>
-                                            </div>
+                                            }
+                                            
                                         </div>
                                     </div>
+                                    <!-- Similar Professional -->
+                                   
                                 </div>
                             </div>
                         </div>

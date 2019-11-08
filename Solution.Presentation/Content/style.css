@@ -1300,9 +1300,9 @@ iframe {
 .banr-head .uou-tabs .content {
 	border: none;
 }
-.banr-head input[type="email"], input[type="text"], input[type="password"] {
-	color: #fff;
-}
+    .banr-head input[type="email"], input[type="text"], input[type="password"] {
+        color: #000;
+    }
 .home-pro .services ul {
 	margin: 0px;
 	padding: 0px;
