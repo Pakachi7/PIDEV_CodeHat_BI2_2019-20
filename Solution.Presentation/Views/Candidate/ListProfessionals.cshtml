@@ -1,0 +1,82 @@
+﻿@model IEnumerable<Solution.Domain.Entities.Candidate>
+
+@{
+    ViewBag.Title = "ListProfessionals";
+}
+<!-- search -->
+    <form action="@ViewContext.RouteData.Values["id"]">
+        <div class="search-pro">
+            <div class="map-search">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            <div class="row">
+                                <div class=" col-md-9">
+                                    <div class="field">
+                                        <input type="text" placeholder="Keyword" name="criteria">
+                                    </div>
+                                </div>
+                                <div class=" col-md-3">
+                                    <button>Search Professionals</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+<!-- Members -->
+<section class="pro-mem">
+    <div class="container pb30">
+        <h3>Professionals</h3>
+        <h1></h1>
+        <div class="row">
+            
+
+            @if ( Model.Count()==0)
+            {
+                <div class="alert alert-warning alert-dismissible" role="alert">
+                    <button type="button" class="close">×</button>
+                    <strong>Oh snap!</strong> Please change your search criteria
+                </div>
+            }
+            @foreach (var item in Model)
+            {
+                <div class="col-sm-3">
+                    <div class="uou-block-6a">
+                        <img src="~/Content/Uploads/@item.ImageUrl" alt="">
+                        <h6>@item.FirstName @item.LastName <span>@item.Email</span></h6>
+                        <p><i class="fa fa-map-marker"></i> @item.Address</p>
+                        @{var isFriend = false;}
+
+                        @foreach (var contact in item.Contacts)
+                        {
+                            if (Convert.ToString(contact.CandidateId).Contains(ViewContext.RouteData.Values["id"].ToString()))
+                            {
+                                isFriend = true;
+                            }
+
+
+                        }
+                        @if (!isFriend)
+                        {
+                            <i class="material-icons">@Html.ActionLink("add", "AddContact", new { userId = ViewContext.RouteData.Values["id"], toAdd = item.CandidateId })</i>
+                        }
+                        else
+                        {
+                            <i class="material-icons"><a href="#">accessibility_new</a></i>
+                        }
+                    </div>
+                    <!-- end .uou-block-6a -->
+                </div>
+            }
+        </div>
+            
+    </div>
+</section>
+
+ 
+
+

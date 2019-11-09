@@ -13,7 +13,9 @@ namespace Solution.Domain.Entities
         public string DiplomaSpeciality  { get; set; }
         public DateTime ObtainingDate { get; set; }
         public string DiplomaUniversity { get; set; }
-        public virtual ICollection<Candidate> Candidates { get; set; }
+
+        public int? CandidateId { get; set; }
+        public virtual Candidate Candidate { get; set; }
 
     }
 }

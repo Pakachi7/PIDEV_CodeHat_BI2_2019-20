@@ -2808,7 +2808,6 @@ body {
 	position: relative;
 	background: #f8f8f8;
 	z-index: 2;
-	min-height: 100%;
 	transition: transform 0.3s;
 	overflow-x: hidden;
 }
@@ -3568,7 +3567,7 @@ table > tbody + tbody {
 /* ======================== */
 form {
 	position: relative;
-	margin-bottom: 24px;
+	
 }
 fieldset {
 	padding: 0;
