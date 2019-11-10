@@ -14,7 +14,7 @@ namespace Solution.Domain.Entities
         public string languageName { get; set; }
     public int Nbr { get; set; }
     public string Level  { get; set; }
-        public virtual ICollection<Candidate>Candidates { get; set; }
+        
 
 
     }

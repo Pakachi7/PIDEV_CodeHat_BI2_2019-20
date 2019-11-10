@@ -3,215 +3,300 @@
 @{
     ViewBag.Title = "Details";
 }
-    
 
-    <div class="profile-company-content user-profile main-user" data-bg-color="f5f5f5">
-        <div class="container">
+
+<div class="profile-bnr user-profile-bnr">
+    <div class="container">
+        <div class="pull-left">
+            <h2>Michael Peterson</h2>
+            <h5>Front-End Developer</h5>
+        </div>
+
+        <!-- Top Riht Button -->
+        <div class="right-top-bnr">
+            <div class="connect">
+                <a href="#." data-toggle="modal" data-target="#myModal"><i class="fa fa-user-plus"></i> Connect</a> <a href="#."><i class="fa fa-share-alt"></i> Share</a>
+                <div class="bt-ns"> <a href="#."><i class="fa fa-bookmark-o"></i> </a> <a href="#."><i class="fa fa-envelope-o"></i> </a> <a href="#."><i class="fa fa-exclamation"></i> </a> </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal POPUP -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="container">
+                    <h6><a class="close" href="#." data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></a> Send Message</h6>
+
+                    <!-- Forms -->
+                    <form action="#">
+                        <ul class="row">
+                            <li class="col-xs-6">
+                                <input type="text" placeholder="First Name ">
+                            </li>
+                            <li class="col-xs-6">
+                                <input type="text" placeholder="Last Name">
+                            </li>
+                            <li class="col-xs-6">
+                                <input type="text" placeholder="Country">
+                            </li>
+                            <li class="col-xs-6">
+                                <input type="text" placeholder="Email">
+                            </li>
+                            <li class="col-xs-12">
+                                <textarea placeholder="Your Message"></textarea>
+                            </li>
+                            <li class="col-xs-12">
+                                <button class="btn btn-primary">Send message</button>
+                            </li>
+                        </ul>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="profile-company-content user-profile main-user" data-bg-color="f5f5f5">
+    <div class="container">
+        <div class="col-md-12">
             <div class="row">
-
-                <!-- Tab Content -->
                 <div class="col-md-12">
-                    <div class="tab-content">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a data-toggle="tab" href="#profile" aria-expanded="true">Profile</a></li>
+                        <li class=""><a data-toggle="tab" href="#Jobs" aria-expanded="true">Connections</a></li>
+                    </ul>
+                </div>
+                <div class="tab-content">
+                    <div id="profile" class="tab-pane face active in">
 
-                        <!-- PROFILE -->
-                        <div id="profile" class="tab-pane fade in active">
-                            <div class="row">
+                        <!-- Tab Content -->
+                        <div class="col-md-12">
+                            <div class="tab-content">
 
-                                <!-- Col -->
-                                <div class="col-md-4">
+                                <!-- PROFILE -->
+                                <div id="profile" class="tab-pane fade in active">
+                                    <div class="row">
 
-                                    <!-- Professional Details -->
-                                    <div class="sidebar">
-                                        <h5 class="main-title">Professional Details</h5>
-                                        @{string path = "~/Content/Uploads/" + Model.ImageUrl;}
-                                        <div class="img-profile"> <img class="media-object" src="@Url.Content(path)" alt="" width="100" height="100"> </div>
-                                        <div class="sidebar-information">
-                                            <ul class="single-category">
-                                                <li class="row">
-                                                    <h6 class="title col-xs-6"> @Html.DisplayNameFor(model => model.FirstName)</h6>
-                                                    <span class="subtitle col-xs-6">@Html.DisplayFor(model => model.FirstName)</span>
-                                                </li>
-                                                <li class="row">
-                                                    <h6 class="title col-xs-6">
-                                                        @Html.DisplayNameFor(model => model.LastName)
-                                                    </h6>
-                                                    <span class="subtitle col-xs-6">@Html.DisplayFor(model => model.LastName)</span>
-                                                </li>
-                                                <li class="row">
-                                                    <h6 class="title col-xs-6">
-                                                        @Html.DisplayNameFor(model => model.DateOfBirthday)
-                                                    </h6>
-                                                    <span class="subtitle col-xs-6">@Html.DisplayFor(model => model.DateOfBirthday)</span>
-                                                </li>
-                                                <li class="row">
-                                                    <h6 class="title col-xs-6"> @Html.DisplayNameFor(model => model.Email)</h6>
-                                                    <span class="subtitle col-xs-6"> @Html.DisplayFor(model => model.Email)s</span>
-                                                </li>
-                                                <li class="row">
-                                                    <h6 class="title col-xs-6"> @Html.DisplayNameFor(model => model.PhoneNumber)</h6>
-                                                    <span class="subtitle col-xs-6"> @Html.DisplayFor(model => model.PhoneNumber)</span>
-                                                </li>
-                                                <li class="row">
-                                                    <h6 class="title col-xs-6">@Html.DisplayNameFor(model => model.Address)</h6>
-                                                    <span class="subtitle col-xs-6">@Html.DisplayFor(model => model.Address)</span>
-                                                </li>
-          
-                                                <li class="row">
-                                                    <h6 class="title col-xs-6">@Html.DisplayNameFor(model => model.bio)</h6>
-                                                    <span class="subtitle col-xs-6">@Html.DisplayFor(model => model.bio)</span>
-                                                </li>
-                                            </ul>
+
+                                        <!-- Col -->
+                                        <div class="col-md-4">
+                                 
+                                            <!-- Professional Details -->
+                                            <div class="sidebar">
+                                                <i class="material-icons">@Html.ActionLink("edit", "Edit", new { id = Model.CandidateId })</i>
+                                                <h5 class="main-title">Professional Details</h5>
+                                                @{string path = "~/Content/Uploads/" + Model.ImageUrl;}
+                                                <div class="img-profile"> <img class="media-object" src="@Url.Content(path)" alt="" width="100" height="100"> </div>
+                                                <div class="sidebar-information">
+                                                    <ul class="single-category">
+                                                        <li class="row">
+                                                            <h6 class="title col-xs-6"> @Html.DisplayNameFor(model => model.FirstName)</h6>
+                                                            <span class="subtitle col-xs-6">@Html.DisplayFor(model => model.FirstName)</span>
+                                                        </li>
+                                                        <li class="row">
+                                                            <h6 class="title col-xs-6">
+                                                                @Html.DisplayNameFor(model => model.LastName)
+                                                            </h6>
+                                                            <span class="subtitle col-xs-6">@Html.DisplayFor(model => model.LastName)</span>
+                                                        </li>
+                                                        <li class="row">
+                                                            <h6 class="title col-xs-6">
+                                                                @Html.DisplayNameFor(model => model.DateOfBirthday)
+                                                            </h6>
+                                                            <span class="subtitle col-xs-6">@Html.DisplayFor(model => model.DateOfBirthday)</span>
+                                                        </li>
+                                                        <li class="row">
+                                                            <h6 class="title col-xs-6"> @Html.DisplayNameFor(model => model.Email)</h6>
+                                                            <span class="subtitle col-xs-6"> @Html.DisplayFor(model => model.Email)s</span>
+                                                        </li>
+                                                        <li class="row">
+                                                            <h6 class="title col-xs-6"> @Html.DisplayNameFor(model => model.PhoneNumber)</h6>
+                                                            <span class="subtitle col-xs-6"> @Html.DisplayFor(model => model.PhoneNumber)</span>
+                                                        </li>
+                                                        <li class="row">
+                                                            <h6 class="title col-xs-6">@Html.DisplayNameFor(model => model.Address)</h6>
+                                                            <span class="subtitle col-xs-6">@Html.DisplayFor(model => model.Address)</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
                                         </div>
-                                    </div>
-                                    <h2>Gerer votre Espace</h2>
+                                        <div class="col-md-8">
+                                            <!-- Biography -->
+                                            <div class="sidebar">
+                                                <h5 class="main-title">Biography:</h5>
 
-                                    <h4>Candidate</h4>
-                                    <hr />
 
-                                </div>
-                                <div class="col-md-8">
-                                    <!-- Skills -->
-                                    <div class="sidebar">
-                                        <h5 class="main-title">About</h5>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, maxime, excepturi, mollitia, voluptatibus similique aliquidautem
-                                            laudantium sapiente ad enim ipsa modi labo rum accusantium deleniti neque architecto vitae.<br>
-                                            <br>
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, nihil, dolores, culpa ullam vero ipsum placeat accusamus nemo
-                                            itate id molestiae consectetur quae pariatur repudi andae vel ex quaerat nam iusto aliquid laborum quia adipisci aut ut imcati
-                                            nisi deleniti tempore maxime sequi fugit reiciendis libero quo. Rerum, assumenda. <br>
-                                            <br>
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem, at nemo inventore temporibus corporis suscipit.
-                                        </p>
-                                        <h5 class="main-title">Skills</h5>
-                                        <div class="job-skills">
 
-                                            <!-- Logo Design -->
-                                            <ul class="row">
-                                                <li class="col-sm-3">
-                                                    <h6><i class="fa fa-plus"></i> HTML5 and Css3</h6>
-                                                </li>
-                                                <li class="col-sm-9">
-                                                    <div class="progress">
-                                                        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"> </div>
-                                                    </div>
-                                                </li>
-                                            </ul>
+                                                <p>
+                                                    @Html.DisplayFor(model => model.bio)
 
-                                            <!-- Logo Design -->
-                                            <ul class="row">
-                                                <li class="col-sm-3">
-                                                    <h6><i class="fa fa-plus"></i> Logo Design</h6>
-                                                </li>
-                                                <li class="col-sm-9">
-                                                    <div class="progress">
-                                                        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"> </div>
-                                                    </div>
-                                                </li>
-                                            </ul>
+                                                </p>
+                                            </div>
+                                            <!-- Skills -->
+                                            <div class="sidebar">
+                                                <i class="material-icons">@Html.ActionLink("add", "AddSkill", new { id = Model.CandidateId })</i>
+                                                <h5 class="main-title">Skills</h5>
+                                                <div class="job-skills">
 
-                                            <!-- Logo Design -->
-                                            <ul class="row">
-                                                <li class="col-sm-3">
-                                                    <h6><i class="fa fa-plus"></i> Web Design</h6>
-                                                </li>
-                                                <li class="col-sm-9">
-                                                    <div class="progress">
-                                                        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 90%;"> </div>
-                                                    </div>
-                                                </li>
-                                            </ul>
+                                                    @foreach (var item in Model.Skills)
+                                                    {
+                                                        <!-- Logo Design -->
+                                                        <ul class="row">
+                                                            <li class="col-md-3">
+                                                                <h6><i class="fa fa-plus"></i> @item.Designation</h6>
+                                                            </li>
+                                                            <li class="col-md-7">
+                                                                <div class="progress">
+                                                                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: @item.rating%;"> </div>
+                                                                </div>
+                                                            </li>
+                                                            <li class="col-md-1">
+                                                                <i class="material-icons">@Html.ActionLink("edit", "EditSkill", new { id = item.SkillId })</i>
+                                                            </li>
+                                                            <li class="col-md-1">
+                                                                <i class="material-icons">@Html.ActionLink("delete", "DeleteSkill", new { id = Model.CandidateId, item.SkillId })</i>
+                                                            </li>
+                                                        </ul>
+                                                    }
 
-                                            <!-- UI / UX -->
-                                            <ul class="row">
-                                                <li class="col-sm-3">
-                                                    <h6><i class="fa fa-plus"></i> UI/UX</h6>
-                                                </li>
-                                                <li class="col-sm-9">
-                                                    <div class="progress">
-                                                        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 80%;"> </div>
-                                                    </div>
-                                                    <p>Preferred languages are Arabic, French & Italian. Proin nibh augue, suscipit asce lerisque sed, lacinia in, mi.</p>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
 
-                                    <!-- Similar Professional -->
-                                    <div class="sidebar">
-                                        <h5 class="main-title">Similar Professionals</h5>
-
-                                        <!-- Similar -->
-                                        <div class="similar">
-                                            <div class="media">
-                                                <div class="media-left">
-                                                    <div class="inn-simi"> <img class="media-object" src="~/Content/images/med-avatar.jpg" alt=""> <a href="#">Profile </a> </div>
-                                                </div>
-                                                <div class="media-body">
-                                                    <h5>Media heading</h5>
-                                                    <p>SEO Specialist - New York, USA</p>
-                                                    <p>
-                                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, maxime, excepturi, mollitia,
-                                                        voluptatibus similique aliquid a dolores autem laudantium sapiente ad enim ipsa modi laborum
-                                                        accusantium deleniti neque architecto vitae.
-                                                    </p>
-
-                                                    <!-- Share -->
-                                                    <div class="share-w"><a href="#."><i class="fa fa-bookmark-o"></i></a> <a href="#."><i class="fa fa-envelope-o"></i></a> <a href="#."><i class="fa fa-eye"></i></a></div>
                                                 </div>
                                             </div>
+                                            <!-- Experiences -->
+                                            <div class="sidebar">
+                                                <i class="material-icons">@Html.ActionLink("add", "AddExperience", new { id = Model.CandidateId })</i>
+                                                <h5 class="main-title">Experiences</h5>
+                                                <div class="row">
+                                                    @foreach (var item in Model.Experiences)
+                                                    {
+                                                        <div class="col-md-4">
+                                                            <div class="uou-block-service-new">
+                                                                @using (Html.BeginForm())
+                                                                {
+                                                                    @Html.AntiForgeryToken()
 
-                                            <!-- Similar -->
-                                            <div class="media">
-                                                <div class="media-left">
-                                                    <div class="inn-simi"> <img class="media-object" src="~/Content/images/med-avatar.jpg" alt=""> <a href="#">Profile </a> </div>
-                                                </div>
-                                                <div class="media-body">
-                                                    <h5>Denise Walsh</h5>
-                                                    <p>SEO Specialist - New York, USA</p>
-                                                    <p>
-                                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, maxime, excepturi, mollitia,
-                                                        voluptatibus similique aliquid a dolores autem laudantium sapiente ad enim ipsa modi laborum
-                                                        accusantium deleniti neque architecto vitae.
-                                                    </p>
 
-                                                    <!-- Share -->
-                                                    <div class="share-w"><a href="#."><i class="fa fa-bookmark-o"></i></a> <a href="#."><i class="fa fa-envelope-o"></i></a> <a href="#."><i class="fa fa-eye"></i></a></div>
-                                                </div>
-                                            </div>
+                                                                    @Html.ActionLink("ddd", "DeleteExperience", new { id = Model.CandidateId, item.ExperienceId })
 
-                                            <!-- Similar -->
-                                            <div class="media">
-                                                <div class="media-left">
-                                                    <div class="inn-simi"> <img class="media-object" src="~/Content/images/med-avatar.jpg" alt=""> <a href="#">Profile </a> </div>
-                                                </div>
-                                                <div class="media-body">
-                                                    <h5>Denise Walsh</h5>
-                                                    <p>SEO Specialist - New York, USA</p>
-                                                    <p>
-                                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, maxime, excepturi, mollitia,
-                                                        voluptatibus similique aliquid a dolores autem laudantium sapiente ad enim ipsa modi laborum
-                                                        accusantium deleniti neque architecto vitae.
-                                                    </p>
+                                                                }
 
-                                                    <!-- Share -->
-                                                    <div class="share-w"><a href="#."><i class="fa fa-bookmark-o"></i></a> <a href="#."><i class="fa fa-envelope-o"></i></a> <a href="#."><i class="fa fa-eye"></i></a></div>
+                                                                <h6><i class="fa fa-paper-plane-o"></i>@item.Designation</h6>
+                                                                <p>@item.Description
+                                                                <p>
+                                                                    @item.StartDate.Year -
+                                                                    @item.EndDate.Year
+                                                                </p>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    }
+
+
                                                 </div>
                                             </div>
+                                            <!-- Certification -->
+                                            <div class="sidebar">
+                                                <i class="material-icons">@Html.ActionLink("add", "AddCertification", new { id = Model.CandidateId })</i>
+                                                <h5 class="main-title">Certifications</h5>
+                                                @foreach (var item in Model.Certifications)
+                                                {
+                                                    <div class="col-lg-4">
+                                                        <div class="pricing-table">
+                                                            <h3>@item.Designation</h3>
+                                                            <ul class="feature">
+                                                                <li> Company Name</li>
+                                                                <li> @item.DateObtained.Year-@item.ExpiryDate.Year</li>
+                                                            </ul>
+                                                            <div class="uou-icon-counter">
+                                                                <i class="fa fa-files-o"></i>
+                                                                <h4>Credential_Id:</h4>
+                                                                <p>@item.CredentialIdentification</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                }
+                                            </div>
+
                                         </div>
                                     </div>
                                 </div>
+                                <!-- Connection -->
+                                <div id="Jobs" class="tab-pane fade">
+                                    <div class="profile-main">
+                                        <h3>People in Connections</h3>
+                                        <div class="profile-in">
+                                            <div class="folow-persons">
+                                                <ul>
+
+
+                                                    @foreach (var item in Model.Contacts)
+                                                    {
+                                                        <!-- MEMBER -->
+                                                        <li>
+                                                            <div class="row">
+                                                                <!-- Title -->
+                                                                <div class="col-xs-4">
+                                                                    <!-- Check Box -->
+                                                                    <div class="checkbox">
+                                                                        <input id="checkbox1-@item.CandidateId" class="styled" type="checkbox">
+                                                                        <label for="checkbox1-@item.CandidateId"></label>
+                                                                    </div>
+                                                                    <!-- Name -->
+                                                                    <div class="fol-name">
+                                                                        <div class="avatar"> <img src="~/Content/Uploads/@item.ImageUrl" alt=""> </div>
+                                                                        <h6>@item.FirstName @item.LastName</h6>
+                                                                        <span>@item.Email</span>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- Location -->
+                                                                <div class="col-xs-2 n-p-r n-p-l"> <span>@item.Address</span> </div>
+
+                                                                <!-- Connections -->
+                                                                <div class="col-xs-2 n-p-r n-p-l">
+
+
+                                                                    @if (item.Contacts.Count == 1)
+                                                                    {
+                                                                        <span>@item.Contacts.Count Connection</span>
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        <span>@item.Contacts.Count Connections</span>
+                                                                    }
+                                                                    </div>
+                                                                    <!-- delete connection -->
+                                                                <div class="col-md-4 n-p-r n-p-l">
+                                                                    <i class="material-icons">@Html.ActionLink("delete", "DeleteContact",  new { userId = ViewContext.RouteData.Values["id"], toDelete = item.CandidateId })</i>
+                                                                </div>
+</li>
+                                                    }
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+
     </div>
+</div>
 
 
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.CandidateId }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
+<script>
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+</script>
 

@@ -40,5 +40,37 @@ namespace Solution.Service
         {
             throw new NotImplementedException();
         }
+
+        public List<Candidate> GetCandidatesByCriteria(string criteria)
+        {
+            List<Candidate> toReturn = GetMany(c => c.FirstName.Contains(criteria) || c.LastName.Contains(criteria)).ToList();
+            if(toReturn.Count!=0)
+                return toReturn;
+            List<Candidate> second = GetMany().ToList();
+            for (int i = 0; i < second.Count; i++)
+            {
+                for(int j = 0;j<second.ElementAt(i).Skills.Count;j++)
+                {
+                    if(second.ElementAt(i).Skills.ElementAt(j).Designation.Contains(criteria))
+                    {
+                        if (!toReturn.Contains(second.ElementAt(i)))
+                        toReturn.Add(second.ElementAt(i));
+                    }
+                }
+                if (toReturn.Count != 0)
+                    return toReturn;
+                for (int j = 0; j < second.ElementAt(i).Experiences.Count; j++)
+                {
+                    if (second.ElementAt(i).Experiences.ElementAt(j).Designation.Contains(criteria))
+                    {
+                        if (!toReturn.Contains(second.ElementAt(i)))
+                            toReturn.Add(second.ElementAt(i));
+                    }
+                }
+                if (toReturn.Count != 0)
+                    return toReturn;
+            }
+            return toReturn;
+        }
     }
 }
