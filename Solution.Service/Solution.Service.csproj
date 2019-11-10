@@ -41,9 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationService.cs" />
+    <Compile Include="AvailabilityService.cs" />
     <Compile Include="CandidateService.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="IApplicationService.cs" />
+    <Compile Include="IAvailabilityService.cs" />
     <Compile Include="ICandidatService.cs" />
+    <Compile Include="IInterviewService.cs" />
+    <Compile Include="InterviewService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

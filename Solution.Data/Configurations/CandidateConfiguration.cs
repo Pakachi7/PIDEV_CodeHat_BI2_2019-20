@@ -57,6 +57,10 @@ HasMany(prod => prod.Offers).WithMany(cat => cat.Candidates).Map(M =>
     M.MapLeftKey("Company");
 });
 
+            HasMany(cand => cand.Interviews).
+                          WithRequired(inter => inter.candidate).//prop nav
+                          HasForeignKey(inter => inter.Candidat_Id).//prop nav
+                          WillCascadeOnDelete(false);
         }
 
 }

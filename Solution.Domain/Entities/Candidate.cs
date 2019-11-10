@@ -34,7 +34,7 @@ namespace Solution.Domain.Entities
         public virtual ICollection<Experience> Experiences { get; set; }
         public virtual ICollection<Offer> Offers { get; set; }
         public virtual ICollection<Company> Companies { get; set; }
-
+        public virtual ICollection<Interview> Interviews { get; set; }
 
 
 
