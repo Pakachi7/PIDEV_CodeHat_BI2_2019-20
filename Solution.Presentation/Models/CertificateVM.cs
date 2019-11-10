@@ -5,8 +5,7 @@ using System.Web;
 
 namespace Solution.Presentation.Models
 {
-    public class ContactVM
+    public class CertificateVM
     {
-        public int CarrierId { get; set; }
     }
 }

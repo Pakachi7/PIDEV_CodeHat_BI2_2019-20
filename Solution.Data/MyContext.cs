@@ -20,12 +20,12 @@ namespace Solution.Data
         public DbSet<Candidate> Candidates { get; set; }
         public DbSet<Application> Applications { get; set; }
         public DbSet<Availability> Availibilities { get; set; }
-     
+        public DbSet<Certification> Certification { get; set; }
         public DbSet<Claim> Claims { get; set; }
         public DbSet<Diploma> Diplomas { get; set; }
         public DbSet<Experience> Experiences { get; set; }
         public DbSet<Interview> Interviews { get; set; }
-
+        public DbSet<Language> Languages { get; set; }
         public DbSet<Message> Messages { get; set; }
         public DbSet<Notification> notifications { get; set; }
         public DbSet<Payment> Payments { get; set; }

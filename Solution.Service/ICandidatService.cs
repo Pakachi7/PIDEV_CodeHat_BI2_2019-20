@@ -17,8 +17,6 @@ namespace Solution.Service
         IEnumerable<Candidate> GetCandidateByDiploma(int IdExperience);
         IEnumerable<Candidate> GetCandidateByCertification(int IdExperience);
 
-        List<Candidate> GetCandidatesByCriteria(string criteria);
-
 
     }
 }

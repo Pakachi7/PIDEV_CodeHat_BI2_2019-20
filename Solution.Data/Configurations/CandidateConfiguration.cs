@@ -13,31 +13,28 @@ namespace Solution.Data.Configurations
         public CandidateConfiguration()
         {
 
-           
+            HasMany(prod => prod.languages).WithMany(cat => cat.Candidates).Map(M =>
+            {
+                M.ToTable("Knowledge");
+                M.MapRightKey("Candidate");//le nom de la clé dans la tab de relation est Product
+                M.MapLeftKey("Language");
+            });
+
 
             HasMany<Experience>(c => c.Experiences)
-                    .WithOptional(e=>e.Candidate)
-                    .HasForeignKey(e => e.CandidateId).WillCascadeOnDelete(true);
-
-            HasMany<Skill>(c => c.Skills)
-                   .WithOptional(e => e.Candidate)
-                   .HasForeignKey(e => e.CandidateId).WillCascadeOnDelete(true);
-
-            HasMany<Diploma>(c => c.Diplomas)
-                   .WithOptional(e => e.Candidate)
-                   .HasForeignKey(e => e.CandidateId).WillCascadeOnDelete(true);
-
-            HasMany<Certification>(c => c.Certifications)
-            .WithOptional(e => e.Candidate)
-            .HasForeignKey(e => e.CandidateId).WillCascadeOnDelete(true);
-
-            HasMany<Candidate>(c => c.Contacts).WithMany().Map(w => w.ToTable("contact").MapLeftKey("CandidateId").MapRightKey("ContactId"));
+                    .WithRequired(e=>e.Candidate)
+                    .HasForeignKey(e => e.CandidateId);
 
 
+            HasMany(prod => prod.Diplomas).WithMany(cat => cat.Candidates).Map(M =>
+            {
+        M.ToTable("DiplomaOfCandidate");
+        M.MapRightKey("Candidate");//le nom de la clé dans la tab de relation est Product
+        M.MapLeftKey("Diploma");
+    });
 
-
-
-            HasMany(prod => prod.Offers).WithMany(cat => cat.Candidates).Map(M =>
+        
+HasMany(prod => prod.Offers).WithMany(cat => cat.Candidates).Map(M =>
             {
     M.ToTable("OffresOfCandidate");
     M.MapRightKey("Candidate");//le nom de la clé dans la tab de relation est Product
@@ -45,7 +42,12 @@ namespace Solution.Data.Configurations
 });
 
         
- 
+ HasMany(prod => prod.Certifications).WithMany(cat => cat.Candidates).Map(M =>
+            {
+    M.ToTable("CertificationOfCandidate");
+    M.MapRightKey("Candidate");//le nom de la clé dans la tab de relation est Product
+    M.MapLeftKey("Certification");
+});
 
        
  HasMany(prod => prod.Companies).WithMany(cat => cat.Candidates).Map(M =>

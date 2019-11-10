@@ -9,14 +9,9 @@ namespace Solution.Domain.Entities
     public class Certification
     {
         public int CertificationId { get; set; }
-        public string Designation { get; set; }
-        public DateTime DateObtained { get; set; }
-        public DateTime ExpiryDate { get; set; }
-        public string CredentialIdentification { get; set; }
-        public int? CandidateId { get; set; }
-        public virtual Candidate Candidate { get; set; }
-
-
+        public string Name { get; set; }
+        public int Nbr { get; set; }
+        public virtual ICollection<Candidate> Candidates { get; set; }
 
     }
 }
