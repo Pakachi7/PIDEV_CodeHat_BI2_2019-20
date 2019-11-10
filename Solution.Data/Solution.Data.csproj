@@ -55,7 +55,6 @@
     <Compile Include="Configurations\CompanyConfiguration.cs" />
     <Compile Include="Configurations\PostConfiguration.cs" />
     <Compile Include="Configurations\QuizConfiguration.cs" />
-    <Compile Include="Configurations\UserConfiguration.cs" />
     <Compile Include="CustomConventions\DateTimeConvention.cs" />
     <Compile Include="Infrastructures\DataBaseFactory.cs" />
     <Compile Include="Infrastructures\Disposable.cs" />
@@ -64,22 +63,6 @@
     <Compile Include="Infrastructures\IUnitOfWork.cs" />
     <Compile Include="Infrastructures\RepositoryBase.cs" />
     <Compile Include="Infrastructures\UnitOfWork.cs" />
-    <Compile Include="Migrations\201911081020441_fixbase.cs" />
-    <Compile Include="Migrations\201911081020441_fixbase.Designer.cs">
-      <DependentUpon>201911081020441_fixbase.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201911090823413_secondmigration.cs" />
-    <Compile Include="Migrations\201911090823413_secondmigration.Designer.cs">
-      <DependentUpon>201911090823413_secondmigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201911091353311_thirdmigration.cs" />
-    <Compile Include="Migrations\201911091353311_thirdmigration.Designer.cs">
-      <DependentUpon>201911091353311_thirdmigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201911091412039_forthmig.cs" />
-    <Compile Include="Migrations\201911091412039_forthmig.Designer.cs">
-      <DependentUpon>201911091412039_forthmig.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -93,20 +76,6 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201911081020441_fixbase.resx">
-      <DependentUpon>201911081020441_fixbase.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201911090823413_secondmigration.resx">
-      <DependentUpon>201911090823413_secondmigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201911091353311_thirdmigration.resx">
-      <DependentUpon>201911091353311_thirdmigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201911091412039_forthmig.resx">
-      <DependentUpon>201911091412039_forthmig.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

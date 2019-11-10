@@ -15,7 +15,5 @@ namespace Solution.Domain.Entities
         public String Application_Description { get; set; }
         public String Application_Status { get; set; }
 
-
-
     }
 }
